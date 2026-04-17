@@ -3,19 +3,22 @@
 #include <time.h>
 #include "ordernacao.h"
 
-
 #define TAMANHO 10
 
 int main ()
 {
-     
-    int vetor [TAMANHO] = {5, 11, 4, 1, 17, 8, 6, 47, 51, 2};
+
+    int vetor [TAMANHO];
+    for (int i = 0; i < TAMANHO; i++) 
+    {
+        vetor [i] = rand()%100;
+    }
     
     printf("Vetor antes de ordenar\n");
     imprimir_vetor (vetor, TAMANHO);
     
     clock_t inicio = clock();
-    bubble_sort (vetor , TAMANHO);
+    quick_sort (vetor , 0, TAMANHO - 1);
     clock_t termino = clock();
     float duracao = (float)(termino - inicio) / CLOCKS_PER_SEC;
 
