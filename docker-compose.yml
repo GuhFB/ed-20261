@@ -1,7 +1,7 @@
 services:
   app:
     image: gcc:15
-    container_name: ed_gustas
+    container_name: ed_20261
     working_dir: /app
     volumes:
       - ./:/app
